@@ -1,27 +1,71 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-size: 62.5%;
-    background-color: var(--white);
-    color: var(--black);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 62.5%;
+  color: var(--black);
 }
 
 :root {
-    --white: #f7f7f7ff;
-    --black: #1f1f1fff;
-    --gray: #848484ff;
-    --secondary: #ba1f33ff;
-    --primary: #ff3a20ff;
+  --bleeding: 0.5cm;
+  --margin: 1cm;
+
+  --white: #f7f7f7;
+  --black: #1f1f1f;
+  --gray: #848484;
+  --primary: #ff3a20;
+  --secondary: #ba1f33;
 }
 
-*::selection {
-    color: var(--white);
-    background-color: var(--black);
+body {
+  margin: 0 auto;
+  padding: 0;
+  background: var(--gray);
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, sans-serif;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+.page {
+  display: inline-block;
+  position: relative;
+  height: 297mm;
+  width: 210mm;
+  font-size: 14pt;
+  margin: 2em auto;
+  padding: calc(var(--bleeding) + var(--margin));
+  box-shadow: 0 0 0.3cm rgba(0, 0, 0, 0.7);
+  background: var(--white);
+}
+
+@media screen {
+  .page::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: calc(100% - var(--bleeding) * 2);
+    height: calc(100% - var(--bleeding) * 2);
+    margin: var(--bleeding);
+    outline: thin solid var(--gray);
+    pointer-events: none;
+    z-index: 9999;
+  }
+}
+
+@media print {
+  .page {
+    margin: 0;
+    overflow: hidden;
+  }
 }
