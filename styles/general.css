@@ -1,71 +1,77 @@
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
-
 html {
-  font-size: 62.5%;
-  color: var(--black);
+	font-size: 62.5%;
+	color: var(--black);
 }
-
 :root {
-  --bleeding: 0.5cm;
-  --margin: 1cm;
-
-  --white: #f7f7f7;
-  --black: #1f1f1f;
-  --gray: #848484;
-  --primary: #ff3a20;
-  --secondary: #ba1f33;
+	--bleeding: 0.5cm;
+	--margin: 1cm;
 }
-
 body {
-  margin: 0 auto;
-  padding: 0;
-  background: var(--gray);
-  display: flex;
-  flex-direction: column;
-  font-family: system-ui, sans-serif;
+	margin: 0 auto;
+	padding: 0;
+	background: var(--gray);
+	display: flex;
+	flex-direction: column;
+	font-family: "Vazirmatn", "Ubuntu";
 }
-
 @page {
-  size: A4;
-  margin: 0;
+	size: A4;
+	margin: 0;
 }
-
 .page {
-  display: inline-block;
-  position: relative;
-  height: 297mm;
-  width: 210mm;
-  font-size: 14pt;
-  margin: 2em auto;
-  padding: calc(var(--bleeding) + var(--margin));
-  box-shadow: 0 0 0.3cm rgba(0, 0, 0, 0.7);
-  background: var(--white);
+	display: inline-block;
+	position: relative;
+	height: 297mm;
+	width: 210mm;
+	font-size: 1.6rem;
+	margin: 2em auto;
+	padding: calc(var(--bleeding) + var(--margin));
+	box-shadow: 0 0 0.3cm rgba(0, 0, 0, 0.7);
+	background: #fff;
 }
-
 @media screen {
-  .page::after {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: calc(100% - var(--bleeding) * 2);
-    height: calc(100% - var(--bleeding) * 2);
-    margin: var(--bleeding);
-    outline: thin solid var(--gray);
-    pointer-events: none;
-    z-index: 9999;
-  }
+	.page::after {
+		position: absolute;
+		content: "";
+		top: 0;
+		left: 0;
+		width: calc(100% - var(--bleeding) * 2);
+		height: calc(100% - var(--bleeding) * 2);
+		margin: var(--bleeding);
+		/* outline: thin solid var(--gray); */
+		pointer-events: none;
+		z-index: 9999;
+	}
 }
-
 @media print {
-  .page {
-    margin: 0;
-    overflow: hidden;
-  }
+	.page {
+		margin: 0;
+		overflow: hidden;
+	}
+}
+a:link,
+a:visited {
+	color: unset;
+	text-decoration: underline dotted var(--gray) 1px;
+	transition: color 0.1s;
+}
+a:hover {
+	color: var(--secondary);
+}
+a:active {
+	text-decoration: none;
+}
+strong {
+	font-weight: 600;
+}
+h3 {
+	color: var(--primary);
+	margin-bottom: 1rem;
 }
