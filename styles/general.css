@@ -13,6 +13,10 @@ html {
 	--bleeding: 0.5cm;
 	--margin: 1cm;
 }
+*::selection {
+	color: #fff;
+	background-color: var(--p-shade);
+}
 body {
 	margin: 0 auto;
 	padding: 0;
@@ -74,4 +78,16 @@ strong {
 h3 {
 	color: var(--primary);
 	margin-bottom: 1rem;
+}
+h3::before {
+	content: "⁕ ";
+}
+h4 {
+	color: var(--secondary);
+}
+ul li::marker {
+	color: var(--secondary);
+}
+.m-right {
+	margin-right: 2rem;
 }
