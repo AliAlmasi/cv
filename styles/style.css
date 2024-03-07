@@ -22,7 +22,6 @@
 	border-radius: 20%;
 	filter: saturate(1.1);
 	background-color: var(--p-shade);
-	padding: 0.3rem;
 }
 .upper-text {
 	display: flex;
@@ -50,24 +49,6 @@
 	display: flex;
 	gap: 0.6rem;
 }
-.skills span {
-	direction: ltr;
-	background-color: var(--primary);
-	color: #fff;
-	font-weight: 500;
-	padding: 0.8rem 2rem;
-	border-radius: 2rem;
-	font-size: 1.5rem;
-}
 .projects {
 	row-gap: 1.4rem;
-}
-.project__item span {
-	background-color: var(--primary);
-	color: #fff;
-	padding: 0.2rem 1rem;
-	margin: 0 0.4rem;
-	border-radius: 1rem;
-	font-size: 1.4rem;
-	font-weight: 400;
 }

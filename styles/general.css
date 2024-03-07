@@ -5,8 +5,6 @@
 	padding: 0;
 	box-sizing: border-box;
 	user-select: none;
-	color-adjust: exact !important;
-	print-color-adjust: exact !important;
 }
 html {
 	font-size: 62.5%;
@@ -43,36 +41,11 @@ body {
 	box-shadow: 0 0 0.3cm rgba(0, 0, 0, 0.7);
 	background: #fff;
 }
-@media screen {
-	.page::after {
-		position: absolute;
-		content: "";
-		top: 0;
-		left: 0;
-		width: calc(100% - var(--bleeding) * 2);
-		height: calc(100% - var(--bleeding) * 2);
-		margin: var(--bleeding);
-		outline: thin solid var(--gray);
-		pointer-events: none;
-		z-index: 9999;
-	}
-}
-@media print {
-	.page {
-		margin: 0;
-		overflow: hidden;
-	}
-	#print {
-		display: none;
-		opacity: 0;
-		cursor: default;
-	}
-}
 a:link,
 a:visited {
 	color: unset;
 	text-decoration: underline dotted var(--gray) 1px;
-	transition: color 0.1s;
+	transition: color 0.2s;
 }
 a:hover {
 	color: var(--secondary);
@@ -101,11 +74,11 @@ ul li::marker {
 }
 .grid__2-col {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: repeat(2, 1fr);
 }
 .grid__3-col {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: repeat(3, 1fr);
 }
 .grid__sm {
 	row-gap: 0.2rem;
@@ -120,6 +93,15 @@ ul li::marker {
 	display: flex;
 	flex-direction: column;
 	gap: 0.4rem;
+}
+.span-item {
+	direction: ltr;
+	background-color: var(--primary);
+	color: #fff;
+	font-weight: 500;
+	padding: 0.8rem 2rem;
+	border-radius: 2rem;
+	font-size: 1.5rem;
 }
 .date-span {
 	background-color: var(--secondary);
@@ -139,4 +121,13 @@ ul li::marker {
 	background-color: var(--s-tint);
 	padding: 0.4rem;
 	border-radius: 0.4rem;
+	fill: var(--black);
+	border: 0.2rem solid var(--black);
+	z-index: 99999;
+	transition: all 0.2s;
+}
+#print:hover {
+	background-color: var(--secondary);
+	fill: #fff;
+	border: 0.2rem solid #fff;
 }

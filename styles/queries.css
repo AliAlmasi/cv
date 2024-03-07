@@ -1,0 +1,39 @@
+@media screen {
+	.page::after {
+		position: absolute;
+		content: "";
+		top: 0;
+		left: 0;
+		width: calc(100% - var(--bleeding) * 2);
+		height: calc(100% - var(--bleeding) * 2);
+		margin: var(--bleeding);
+		border: 1px solid var(--gray);
+		pointer-events: none;
+		z-index: 9999;
+	}
+}
+@media print {
+	.page {
+		margin: 0;
+		overflow: hidden;
+	}
+	#print {
+		display: none;
+		opacity: 0;
+		cursor: default;
+	}
+	.span-item {
+		background-color: unset;
+		color: var(--gray);
+		border: 0.2rem solid var(--primary);
+	}
+	.date-span {
+		background-color: unset;
+		color: var(--gray);
+		border: 0.2rem solid var(--secondary);
+	}
+	.upper-image {
+		background-color: unset;
+		border: 0.2rem solid var(--p-shade);
+	}
+}
