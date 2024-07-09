@@ -20,6 +20,7 @@
 }
 .upper-image {
 	border-radius: 20%;
+	-webkit-filter: saturate(1.1);
 	filter: saturate(1.1);
 	background-color: var(--p-shade);
 }
@@ -50,5 +51,20 @@
 	gap: 0.6rem;
 }
 .projects {
-	row-gap: 1.4rem;
+	row-gap: 2.6rem;
+}
+.project__item img {
+	max-width: 65%;
+	height: auto;
+	border-radius: 1rem;
+	border: 1px solid var(--s-shade);
+	margin-right: 2rem;
+	cursor: pointer;
+	transition: -webkit-filter 0.2s;
+	transition: filter 0.2s;
+	transition: filter 0.2s, -webkit-filter 0.2s;
+}
+.project__item img:hover {
+	-webkit-filter: contrast(0.7);
+	filter: contrast(0.7);
 }

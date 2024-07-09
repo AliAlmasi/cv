@@ -4,6 +4,9 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 }
 html {
@@ -13,6 +16,10 @@ html {
 :root {
 	--bleeding: 0.2cm;
 	--margin: 0.5cm;
+}
+*::-moz-selection {
+	color: #fff;
+	background-color: var(--p-shade);
 }
 *::selection {
 	color: #fff;
@@ -44,6 +51,7 @@ body {
 a:link,
 a:visited {
 	color: unset;
+	-webkit-text-decoration: underline dotted var(--gray) 1px;
 	text-decoration: underline dotted var(--gray) 1px;
 	transition: color 0.2s;
 }
@@ -62,9 +70,13 @@ h3 {
 }
 h3::before {
 	content: "+ ";
+	color: var(--primary);
 }
 h4 {
 	color: var(--secondary);
+}
+ul {
+	list-style-type: "⨯ ";
 }
 ul li::marker {
 	color: var(--secondary);
