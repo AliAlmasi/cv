@@ -32,6 +32,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	font-family: "Vazirmatn", "Ubuntu";
+	font-weight: 500;
 }
 @page {
 	size: A4;
@@ -65,6 +66,7 @@ strong {
 	font-weight: 600;
 }
 h3 {
+	font-weight: 800;
 	color: var(--primary);
 	margin-bottom: 1rem;
 }
@@ -73,6 +75,7 @@ h3::before {
 	color: var(--primary);
 }
 h4 {
+	font-weight: 700;
 	color: var(--secondary);
 }
 ul {
