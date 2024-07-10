@@ -1,13 +1,3 @@
-:root {
-	--black: #1f1f1f;
-	--gray: #3f5874;
-	--primary: #00509d;
-	--p-tint: #4d85ba;
-	--p-shade: #00305e;
-	--secondary: #1f7a8c;
-	--s-tint: #79afba;
-	--s-shade: #134954;
-}
 .upper {
 	height: 28%;
 	display: flex;
