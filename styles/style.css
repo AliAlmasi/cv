@@ -48,7 +48,8 @@
 	/* The element itself does not generate any boxes, but its children (img tag below) generate boxes as normal */
 }
 .project__item a img {
-	max-width: 65%;
+	max-width: 23.4rem;
+	max-height: 16.4rem;
 	height: auto;
 	border-radius: 1rem;
 	border: 1px solid var(--s-shade);
