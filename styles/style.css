@@ -13,11 +13,12 @@
 	-webkit-filter: saturate(1.1);
 	filter: saturate(1.1);
 	background-color: var(--p-shade);
+	background: linear-gradient(215deg, var(--primary) 0%, var(--p-shade) 100%);
 }
 .upper-text {
 	display: flex;
 	flex-direction: column;
-	gap: 0.4rem;
+	gap: 0.8rem;
 }
 .upper-text__titlebox {
 	color: var(--primary);

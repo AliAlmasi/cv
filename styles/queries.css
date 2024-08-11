@@ -1,39 +1,36 @@
-@media screen {
-	.page::after {
-		position: absolute;
-		content: "";
-		top: 0;
-		left: 0;
-		width: calc(100% - var(--bleeding) * 2);
-		height: calc(100% - var(--bleeding) * 2);
-		margin: var(--bleeding);
-		border: 1px solid var(--gray);
-		pointer-events: none;
-		z-index: 9999;
+@media (max-width: 50.5em) {
+	.page {
+		transform: scale(0.9);
+		margin: 0;
+	}
+	.page:nth-child(2) {
+		margin-top: -8rem;
 	}
 }
-@media print {
+@media (max-width: 45.5em) {
 	.page {
-		margin: 0;
-		overflow: hidden;
+		transform: scale(0.85);
+		margin-top: -4rem;
 	}
-	#print {
-		display: none;
-		opacity: 0;
-		cursor: default;
+	.page:nth-child(2) {
+		margin-top: -14rem;
 	}
-	.span-item {
-		background-color: unset;
-		color: var(--gray);
-		border: 0.2rem solid var(--primary);
+}
+@media (max-width: 43em) {
+	.page {
+		transform: scale(0.8);
+		margin-top: -6rem;
 	}
-	.date-span {
-		background-color: unset;
-		color: var(--gray);
-		border: 0.2rem solid var(--secondary);
+	.page:nth-child(2) {
+		margin-top: -20rem;
 	}
-	.upper-image {
-		background-color: unset;
-		border: 0.2rem solid var(--p-shade);
+}
+@media (max-width: 40.5em) {
+	.page {
+		transform: scale(0.75);
+		margin-top: -10rem;
+	}
+	.page:nth-child(2) {
+		margin-top: -26rem;
 	}
 }
